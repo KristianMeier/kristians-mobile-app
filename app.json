@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "kristians-mobile-app",
+    "slug": "kristians-mobile-app"
+  }
+}
