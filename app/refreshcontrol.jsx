@@ -1,13 +1,11 @@
-import { useCallback, useState } from "react"
+import { useCallback, useState } from 'react'
 import {
   RefreshControl,
   SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
-} from "react-native"
-import { FlatList } from "react-native-gesture-handler"
-import { set } from "react-native-reanimated"
+} from 'react-native'
 
 const App = () => {
   const [refreshing, setRefreshing] = useState(false)
@@ -48,9 +46,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
-    backgroundColor: "pink",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: 'pink',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 })
 

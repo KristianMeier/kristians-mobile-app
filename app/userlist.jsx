@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from 'react'
 import {
   StyleSheet,
   Text,
   View,
   FlatList,
   TouchableOpacity,
-} from "react-native"
-import * as SQLite from "expo-sqlite"
+} from 'react-native'
+import * as SQLite from 'expo-sqlite'
 
-const db = SQLite.openDatabase("authentication.db")
+const db = SQLite.openDatabase('authentication.db')
 
 const UserList = () => {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
     db.transaction((tx) => {
-      tx.executeSql("SELECT * FROM users;", [], (_, { rows }) => {
+      tx.executeSql('SELECT * FROM users;', [], (_, { rows }) => {
         setUsers(rows._array)
       })
     })
@@ -23,8 +23,8 @@ const UserList = () => {
 
   const clearUsers = () => {
     db.transaction((tx) => {
-      tx.executeSql("DELETE FROM users;", [], () => {
-        console.log("Users cleared successfully.")
+      tx.executeSql('DELETE FROM users;', [], () => {
+        console.log('Users cleared successfully.')
       })
     })
   }
@@ -58,37 +58,37 @@ const UserList = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     padding: 16,
   },
   title: {
     fontSize: 24,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginBottom: 16,
   },
   userItem: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     marginBottom: 8,
   },
   username: {
     fontSize: 18,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   password: {
     fontSize: 18,
-    color: "gray",
+    color: 'gray',
   },
   button: {
-    backgroundColor: "blue",
+    backgroundColor: 'blue',
     padding: 10,
     borderRadius: 5,
     marginBottom: 10,
   },
   buttonText: {
-    color: "white",
-    textAlign: "center",
+    color: 'white',
+    textAlign: 'center',
   },
 })
 
